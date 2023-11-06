@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stronka in progress...</title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body>
+        <div class = "container">
+            <header class = "background-header">
+                    <div></div>
+                        <div class = "logo">
+                            <h1 class = "header-text" style = "margin-right: 3.5vw;">CUBE</h1>
+                                <div class = "logo-center">
+                                    <h1 class = "header-text" style = "color: #111222">-</h1>
+                                    <div class = "icon" onclick = "scramble()">
+                                        <div class = "cube-element" style = "background-color: #ffffff;"></div>
+                                        <div class = "cube-element" style = "background-color: #c08768;"></div>
+                                        <div class = "cube-element" style = "background-color: #dac17a;"></div>
+                                        <div class = "cube-element" style = "background-color: #96302f;"></div>
+                                        <div class = "cube-element" style = "background-color: #548a42;"></div>
+                                        <div class = "cube-element" style = "background-color: #ffffff;"></div>
+                                        <div class = "cube-element" style = "background-color: #ffffff;"></div>
+                                        <div class = "cube-element" style = "background-color: #96302f;"></div>
+                                        <div class = "cube-element" style = "background-color: #3e6d9d;"></div>
+                                    </div>
+                                    <h1 class = "header-text" style = "color: #111222">-</h1>
+                                </div>
+                                <h1 class = "header-text">CROSS</h1>
+                        </div>
+                    <div></div>
+            </header>
+                <nav class = "content-box">
+                    <div></div>
+                    <div class = "content">
+                        <div class = "tut-home" onclick = "location.href='3x3-tut-choose.html'">
+                            <p class = "option-text">MENU</p>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">WSTĘP</h1>
+                            <p class = "content-text">
+                                Tutaj nauczysz się układać kostkę 3x3x3 krok po kroku najprostszą metodą - LBL (Layer By Layer).
+                                Poradnik układania kostki Rubika jest podzielony na kilka etapów,
+                                w których otrzymasz pomocne informacje i algorytmy.
+                            </p>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">NOTACJE</h1>
+                            <p class = "content-text">
+                                Zobacz, jak oznacza się poszczególne ruchy ścianami. 
+                                W przypadku gdy przy literce znajduje się znak prim ( ' ) to chodzi o ruch odwrotny do ruchu wskazówek. 
+                                Przykład R' to ruch przeciwny. Zawsze możesz skorzystać z poniższej ściągawki. 
+                                W oparciu o notacje tworzone są uniwersalne algorytmy, 
+                                dzięki którym ułożenie kostki Rubika i innej kostki 3x3x3 jest banalnie proste.
+                            </p>
+                            <div class = "notations">
+                                <img src = "img/tutorials/notations/rcolor.png" style = "border-radius: 20px; border: solid; border-width: 5px; border-color: #9499e1;">
+                                <img src = "img/tutorials/notations/lcolor.png" style = "border-radius: 20px; border: solid; border-width: 5px; border-color: #9499e1;">
+                                <img src = "img/tutorials/notations/ucolor.png" style = "border-radius: 20px; border: solid; border-width: 5px; border-color: #9499e1;">
+                                <img src = "img/tutorials/notations/dcolor.png" style = "border-radius: 20px; border: solid; border-width: 5px; border-color: #9499e1;">
+                                <img src = "img/tutorials/notations/fcolor.png" style = "border-radius: 20px; border: solid; border-width: 5px; border-color: #9499e1;">
+                                <img src = "img/tutorials/notations/bcolor.png" style = "border-radius: 20px; border: solid; border-width: 5px; border-color: #9499e1;">
+                            </div>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">KROK 1. BIAŁY KRZYŻ</h1>
+                            <p class = "content-text">
+                                Najlepiej, gdy spróbujesz samodzielnie ułożyć biały krzyż. 
+                                W razie potrzeby poniżej znajdziesz zdjęcie, przedstawiające jak wygląda prawidłowo 
+                                ułożony biały krzyż oraz 2 warianty jak można go ułożyć.
+                            </p>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube1.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Tak wygląda prawidłowo ułożony biały krzyż w kostce 3x3x3.
+                                        Musisz zwrócić uwagę na to, aby krawędzie łączyły się z centrami na środkowej warstwie,
+                                        a kolory krawędzi na całym krzyżu łączyły się tak jak na zdjęciu.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube2.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        W takiej sytuacji wykonujemy poniższy algorytm, 
+                                        który obraca krawędź, nie niszcząc białego krzyża.
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg1color.png" class = "img-alg">
+                                </div>
+                            </div>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube3.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        W przypadku takiej sytuacji wykonaj poniższy algorytm, 
+                                        aby wstawić krawędź i stworzyć biały krzyż.
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg2color.png" class = "img-alg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">KROK 2. NAROŻNIKI BIAŁEJ WARSTWY</h1>
+                            <p class = "content-text">
+                                Krok 2, czyli czas wstawienie każdego narożnika białej warstwy. Jeśli masz problem z narożnikami skorzystaj z poniższego algorytmu.
+                            </p>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube4.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Tak wygląda poprawnie ułożona pierwsza warstwa kostki. 
+                                        Biały krzyż i narożniki znajdują się na swoim miejscu.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube5.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Umieść narożnik na górnej warstwie w miejscu zaznaczonym na obrazku. 
+                                        Wykonując poniższy algorytm wstawisz narożnik na dolną warstwę. 
+                                        Algorytm wykonujesz do momentu, gdy narożnik będzie dobrze obrócony.
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg3color.png" class = "img-alg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">KROK 3. DRUGA WARSTWA</h1>
+                            <p class = "content-text">
+                                Nie zatrzymujemy się - Przechodzimy do etapu 3, 
+                                w którym zajmiemy się ułożeniem krawędzi środkowej warstwy. 
+                                Jest to nieco trudniejszy etap, 
+                                gdyż musimy uważać na ułożoną już pierwszą warstwę. Użyjemy dwa proste algorytmy.
+                            </p>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube6.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Poniżej znajdziesz algorytm, który pozwoli Ci wkładać krawędzie zarówno w lewo, jak i w prawo.
+                                        Po tym kroku, nasza kostka będzie wyglądać tak jak na obrazku.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube7.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Wstawianie krawędzi w lewo
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg4color.png" class = "img-alg">
+                                </div>
+                            </div>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube8.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Wstawianie krawędzi w prawo
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg5color.png" class = "img-alg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">KROK 4. ŻÓŁTY KRZYŻ</h1>
+                            <p class = "content-text">
+                                Jesteśmy, coraz bliżej ułożenia kostki :) 
+                                Rozpoczynamy układanie ostatniej warstwy. 
+                                Naszym pierwszym celem jest ułożenie żółtego krzyża. 
+                                Możemy spotkać 4 różne warianty. 
+                                Kropke, odwrócone L, minus lub gotowy krzyż.
+                            </p>
+                            <div class = "pic-disc-alg">
+                                <p class = "disc-text">
+                                    Etapy układania żółtego krzyża
+                                </p>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/yellow-cross-stages.PNG" class = "img-alg">
+                                </div>
+                                <p class = "disc-text">
+                                    W każdym etapie sprawdź, czy poprawnie trzymasz kostkę.
+                                </p>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg6color3.PNG" class = "img-alg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">KROK 5. PERMUTACJA KRAWĘDZI ŻÓŁTEGO KRZYŻA</h1>
+                            <p class = "content-text">
+                                Żółty krzyż jest już ułożony, 
+                                jednak kolory krawędzi nie pasują do centrów na środkowej warstwie 
+                                (krawędzie zaznaczone X-ami na poniższej grafice). 
+                                Ten etap polega permutacji tych krawędzi.
+                            </p>
+                            <div class = "pic-disc-alg">
+                                <p class = "disc-text" style = "margin-bottom: 0;">
+                                    Wariant 1:
+                                </p>
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube9.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Poprawne krawędzie znajdują się naprzeciwko siebie. Tak jak na obrazku.
+                                        Po ułożeniu tego wariantu, otrzymasz wariant 2.
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg7color.png" class = "img-alg">
+                                </div>
+                            </div>
+                            <div class = "pic-disc-alg">
+                                <p class = "disc-text" style = "margin-bottom: 0;">
+                                    Wariant 2:
+                                </p>
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube10.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Teraz dwie poprawne krawędzie są obok siebie. 
+                                        Ustawiamy kostkę tak, aby poprawna krawędź 
+                                        znajdowała się z prawej strony oraz z tyłu. Tak jak na obrazku.
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg8color.png" class = "img-alg">
+                                </div>
+                                <p class = "disc-text">
+                                    Po wykonaniu poniższego algorytmu, 
+                                    wszystkie krawędzie żółtego krzyża będą zgadzać się z centrami środkowej warstwy.
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">KROK 6. PERMUTACJA ŻÓŁTYCH NAROŻNIKÓW</h1>
+                            <p class = "content-text" style = "margin-bottom: 20px;">
+                                Już prawie koniec :) Pozostało ułożyć same narożniki. Najpierw należy umieścić je na swoim miejscu, a następnie obrócić.
+                            </p>
+                            <p class = "content-text" style = "font-weight: bold; margin-top: 0; margin-bottom: 0;">
+                                Ilość narożników na swoim miejscu może być równa tylko 4, 1 lub 0.
+                            </p>
+                            <p class = "content-text">
+
+                                W przypadku gdy wszystkie 4 narożniki są w złych miejscach, mieszamy dowolne narożniki używając algorytmu poniżej.
+                                W przypadku gdy 1 narożniki jest na swoim miejscu, obracamy 3 pozostałe tym samym algorytmem, aż wszystkie będą ok.
+                            </p>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube11.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Znajdź narożnik, który jest na swojej pozycji i obróć kostkę, tak jak na obrazku.
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg9color.png" class = "img-alg">
+                                </div>
+                                <p class = "disc-text">
+                                    Wykonuj algorytm do momentu, aż wszystkie 4 narożniki będą na swoim miejscu.
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">KROK 7. ORIENTACJA NAROŻNIKÓW</h1>
+                            <p class = "content-text" style = "margin-bottom: 20px;">
+                                Obracamy kostkę. To już ostatni etap. Wszystkie narożniki znajdują się na swojej pozycji. 
+                                Teraz wystarczy je tylko obrócić. 
+                                Do obrócenia możemy mieć 4, 3 lub 2 narożniki.
+                            </p>
+                            <p class = "content-text" style = "margin-top: 0; margin-bottom: 20px;">
+                                Algorytm wykonujemy do momentu, aż obracany narożnik będzie skierowany żółtym do dołu.
+                            </p>
+                            <p class = "content-text" style = "font-weight: bold; margin-top: 0; margin-bottom: 20px;">
+                                UWAGA! Za każdym raze wykonujemy wszystkie 4 ruchy algorytmu, na przykład: 
+                                po ułożeniu jednego żółtego narożnika nadal wykonujemy ruch górna ścianą w lewo (U')
+                            </p>
+                            <p class = "content-text" style = "font-weight: bold; margin-top: 0; margin-bottom: 0;">
+                                UWAGA! Kolejno obracając JEDYNIE dolną warstwą podstaw kolejny narożnik wymagający obrócenia w zaznaczone miejsce.
+                                NIE OBRACAMY KOSTKI W DŁONIACH! Poruszamy tylko dolną warstwą.
+                            </p>
+                            <p class = "content-text">
+                                Wykonuj dalej algorytm, aż narożnik będzie dobrze obrócony. 
+                                To samo wykonaj dla pozostałych narożników.
+                            </p>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/cube12.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Poniższy algorytm obraca zaznaczony na obrazku narożnik. <span style = "font-weight: bold;">Uwaga!</span>
+                                        Algorytm przez chwile niszczy ułożoną kostkę (6 krotne wykonanie algorytmu przywraca sytuację początkową).
+                                    </p>
+                                </div>
+                                <div class = "img-alg-container">
+                                    <img src = "img/tutorials/3x3-lbl/alg3color.png" class = "img-alg">
+                                </div>
+                                <p class = "disc-text">
+                                    Wykonuj algorytm do momentu, aż wszystkie 4 narożniki będą na swoim miejscu.
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "content-element">
+                            <h1 class = "content-header">GRATULACJE!!!</h1>
+                            <div class = "pic-disc-alg">
+                                <div class = "pic-disc">
+                                    <div class = "img-cube-container">
+                                        <img src = "img/tutorials/3x3-lbl/solved.png" class = "img-cube">
+                                    </div>
+                                    <p class = "disc-text">
+                                        Udało Ci się ułożyć kostkę rubika! Możesz być z siebie dumny! :D
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </nav>
+                <footer class = "footer-text">&copy; Created by Krystian Sienkewicz of AGH University of Science and Technology</footer>
+        </div>
+        <script src = "scramble.js"></script>
+    </body>
+</html>
